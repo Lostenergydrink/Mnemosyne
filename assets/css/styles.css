@@ -181,15 +181,24 @@ p {
   transition: all 0.3s ease;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.exhibit-info {
+  flex: 1;
 }
 
 .exhibit-card-media {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
+  flex: 0 0 200px;
 }
 
 .exhibit-thumb {
   width: 100%;
-  max-height: 220px;
+  height: 150px;
   object-fit: cover;
   display: block;
   border-radius: 2px;
@@ -408,6 +417,23 @@ p {
   
   .exhibit-title {
     font-size: 1.5rem;
+  }
+
+  .exhibit-card {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .exhibit-card-media {
+    width: 100%;
+    flex: none;
+    margin-bottom: 1rem;
+  }
+
+  .exhibit-thumb {
+    height: 200px;
   }
   
   .exhibits-grid {
