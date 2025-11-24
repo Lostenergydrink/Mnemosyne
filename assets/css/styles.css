@@ -107,6 +107,7 @@ p {
   padding: 0 1rem;
   color: var(--champagne-gold);
   font-size: 0.75rem;
+  animation: sparkle 3s ease-in-out infinite;
 }
 
 .site-title {
@@ -132,6 +133,8 @@ p {
 
 .back-link:hover {
   color: var(--light-rose);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .back-link::before {
@@ -156,6 +159,8 @@ p {
 
 .next-link:hover {
   color: var(--light-rose);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .next-link::after {
@@ -216,16 +221,18 @@ p {
   color: var(--champagne-gold);
   font-size: 0.65rem;
   opacity: 0.4;
+  transition: all 0.3s ease;
 }
 
 .exhibit-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(217, 200, 160, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(217, 200, 160, 0.35), 0 4px 12px rgba(217, 200, 160, 0.2);
   border-color: var(--champagne-gold);
 }
 
 .exhibit-card:hover::before {
   opacity: 1;
+  animation: sparkle 1.5s ease-in-out infinite;
 }
 
 .exhibit-number {
@@ -264,6 +271,8 @@ p {
 .view-exhibit-link:hover {
   color: var(--light-rose);
   border-bottom-color: var(--light-rose);
+  border-bottom-width: 2px;
+  transform: translateX(2px);
 }
 
 /* ==========================================================================
@@ -400,6 +409,7 @@ p {
   padding: 0 1rem;
   color: var(--champagne-gold);
   font-size: 0.75rem;
+  animation: sparkle 3s ease-in-out infinite;
 }
 
 /* ==========================================================================
@@ -481,6 +491,17 @@ p {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.4;
+    text-shadow: 0 0 2px var(--champagne-gold);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px var(--champagne-gold), 0 0 4px var(--light-rose);
   }
 }
 
