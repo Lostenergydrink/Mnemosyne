@@ -64,6 +64,7 @@ Replace the placeholder paths with your actual files:
 1. Place your animated restoration in `assets/videos/`
 2. Name it to match: `exhibit-1.mp4`, `exhibit-2.mp4`, etc.
 3. Recommended specs: H.264 codec, 30fps, 1080p or 720p, <10MB ideal
+   - **Archive convention**: the live site currently uses a single consolidated clip per exhibit named `vid-a.mp4`, `vid-b.mp4`, etc. Keep those filenames exact (including lowercase) so the HTML references stay in sync on case-sensitive hosts.
 
 ### 2. Creating a New Exhibit
 

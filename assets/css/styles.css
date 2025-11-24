@@ -359,6 +359,10 @@ p {
   border-radius: 1px;
 }
 
+.featured-moment .media-block video {
+  border-radius: 30px;
+}
+
 .media-block video {
   background: #000;
 }
