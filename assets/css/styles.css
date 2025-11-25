@@ -122,8 +122,13 @@ p {
   max-width: 65ch;
   margin: 0 auto;
   font-size: 1.05rem;
-  color: var(--charcoal);
+  color: var(--champagne-gold);
   line-height: 1.6;
+  background: var(--soft-blush);
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--light-rose);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .back-link {
@@ -168,7 +173,29 @@ p {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+/* Three-column layout for nav with prev/back/next */
+.exhibit-nav.has-prev {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+}
+
+.exhibit-nav.has-prev .back-link {
+  grid-column: 2;
+  text-align: center;
+}
+
+.exhibit-nav.has-prev .prev-link {
+  grid-column: 1;
+  text-align: left;
+}
+
+.exhibit-nav.has-prev .next-link {
+  grid-column: 3;
+  text-align: right;
 }
 
 .next-link {
