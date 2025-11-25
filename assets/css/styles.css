@@ -121,6 +121,7 @@ p {
 .site-intro {
   max-width: 65ch;
   margin: 0 auto;
+  font-family: Georgia, "Playfair Display", "Cormorant", serif;
   font-size: 1.05rem;
   color: var(--champagne-gold);
   line-height: 1.6;
