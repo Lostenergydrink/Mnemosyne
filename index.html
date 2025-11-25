@@ -16,9 +16,11 @@
     <header class="site-header">
       <h1 class="site-title">The Raymond Tatum Dolly Archive</h1>
       <p class="site-intro">
-        A small curated archive of restored photographs and animated memories celebrating 
-        Raymond Tatum's lifelong devotion to Dolly Parton. Each exhibit has been carefully 
-        digitized and preserved with love and attention to detail.
+        A small curated archive celebrating Raymond Tatum's lifelong devotion to Dolly Parton. 
+        These restored photographs and animations represent moments from Raymond's personal collection. 
+        While efforts were made to verify specific details, archival records proved incomplete. 
+        Rather than invent details, this archive honors these photographs as Raymond has preserved them: 
+        treasured memories from his journey as Dolly's most devoted admirer.
       </p>
     </header>
 
@@ -31,9 +33,7 @@
       <section class="media-block">
         <video 
           src="assets/videos/hero.mp4" 
-          controls 
           autoplay 
-          loop 
           muted 
           playsinline
           aria-label="Restored clip from the 1989 NASA Concert Special">
@@ -61,7 +61,8 @@
             <div class="exhibit-number">Exhibit No. 1</div>
             <h3>Good Morning Houston, 1992</h3>
             <p class="exhibit-description">
-              On March 10, 1992, Ray joined Dolly on <em>Good Morning Houston</em>—a quiet studio moment that became one of his proudest memories. This still has been carefully restored from the original photograph.
+              This photograph comes from an appearance with Dolly Parton on <em>Good Morning Houston</em>. 
+              The original print is dated March 10, 1992 in Raymond’s handwriting in the white space below the image. This version has been digitally cleaned and restored from that original photograph.
             </p>
             <a href="exhibits/exhibit-1.html" class="view-exhibit-link">View Exhibit</a>
           </div>
@@ -77,9 +78,10 @@
         <article class="exhibit-card">
           <div class="exhibit-info">
             <div class="exhibit-number">Exhibit No. 2</div>
-            <h3>Early Meet & Greet</h3>
+            <h3>Studio Portrait with Dolly</h3>
             <p class="exhibit-description">
-              Captured during an event, this photograph shows Ray and Dolly side by side, relaxed and smiling for the camera. Restored from a original print, it brings new clarity to a moment that had begun to fade with time.
+              A close-up portrait of Raymond and Dolly taken from the same photographic session as Exhibit No. 3. 
+              This crop focuses on their expressions, bringing the faces forward from the wider full-length image. Restored from Raymond’s original print.
             </p>
             <a href="exhibits/exhibit-2.html" class="view-exhibit-link">View Exhibit</a>
           </div>
@@ -95,9 +97,10 @@
         <article class="exhibit-card">
           <div class="exhibit-info">
             <div class="exhibit-number">Exhibit No. 3</div>
-            <h3>A Cherished Moment</h3>
+            <h3>Studio Photograph – Full Length</h3>
             <p class="exhibit-description">
-              From the same day as Exhibit 2, this wider frame captures the full scene—both standing together, the moment preserved in its entirety. The photograph has been digitally cleaned and repaired so the expression on each face can be seen the way it was that day.
+              A full-length studio photograph of Raymond and Dolly from the same occasion as Exhibit No. 2. 
+              This image shows the complete scene, including clothing and pose, and has been carefully restored from wear, fading, and surface marks on the original print.
             </p>
             <a href="exhibits/exhibit-3.html" class="view-exhibit-link">View Exhibit</a>
           </div>
@@ -113,9 +116,9 @@
         <article class="exhibit-card">
           <div class="exhibit-info">
             <div class="exhibit-number">Exhibit No. 4</div>
-            <h3>Later Years, Still Devoted</h3>
+            <h3>Signing Event — Later Years</h3>
             <p class="exhibit-description">
-              Taken years after their earliest meetings, this portrait reflects a lifetime of devotion. The lines are sharper, the colors truer, but what stands out most is the same unmistakable warmth between them.
+              A photograph of Raymond meeting Dolly at a signing event, taken years after the earlier studio photographs. This preserved moment reflects the long-running admiration that has continued through the years and into the present day. The image has been carefully restored from Raymond’s original print.
             </p>
             <a href="exhibits/exhibit-4.html" class="view-exhibit-link">View Exhibit</a>
           </div>
@@ -137,6 +140,33 @@
 
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.querySelector('video');
+      if (video) {
+        // Check if user has seen the intro this session
+        if (!sessionStorage.getItem('hasSeenIntro')) {
+          // First visit this session - play intro once then loop
+          video.loop = false;
+          
+          video.addEventListener('ended', function() {
+            // Mark intro as seen
+            sessionStorage.setItem('hasSeenIntro', 'true');
+            // Continue to loop normally
+            video.loop = true;
+            video.play();
+          });
+          
+          // Ensure it plays
+          video.play().catch(e => console.log('Autoplay prevented:', e));
+        } else {
+          // Already seen intro - just loop normally
+          video.loop = true;
+          video.play().catch(e => console.log('Autoplay prevented:', e));
+        }
+      }
+    });
+  </script>
 </body>
 </html>
 

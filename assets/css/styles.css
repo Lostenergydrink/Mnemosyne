@@ -141,6 +141,23 @@ p {
   content: '← ';
 }
 
+.prev-link {
+  display: inline-block;
+  color: var(--champagne-gold);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.prev-link:hover {
+  color: var(--light-rose);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.prev-link::before {
+  content: '← ';
+}
+
 .exhibit-nav {
   display: flex;
   justify-content: space-between;
@@ -266,6 +283,17 @@ p {
   font-size: 0.95rem;
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
+  /* Make clickable area cover the card */
+}
+
+.view-exhibit-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .view-exhibit-link:hover {
@@ -360,11 +388,12 @@ p {
 }
 
 .featured-moment .media-block video {
-  border-radius: 30px;
+  border-radius: 4px;
 }
 
 .media-block video {
   background: #000;
+  pointer-events: none;
 }
 
 .exhibit-caption {
@@ -431,6 +460,14 @@ p {
   
   .exhibit-title {
     font-size: 1.5rem;
+  }
+
+  .exhibit-nav {
+    flex-wrap: nowrap;
+  }
+  
+  .exhibit-nav a {
+    font-size: 0.85rem;
   }
 
   .exhibit-card {
