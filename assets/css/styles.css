@@ -176,7 +176,7 @@ p {
 
 .back-to-archive-link {
   display: inline-block;
-  color: var(--charcoal);
+  color: var(--champagne-gold);
   text-decoration: none;
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
@@ -418,10 +418,10 @@ p {
 }
 
 .featured-moment .media-block video {
-  border-radius: 8px;
+  border-radius: 4px;
   /* Enhanced styling for featured video */
   background: var(--soft-blush);
-  padding: 1rem;
+  padding: 2px;
   box-shadow: 
     0 2px 8px rgba(0, 0, 0, 0.06),
     0 8px 24px rgba(217, 200, 160, 0.15),
