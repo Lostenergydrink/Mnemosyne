@@ -165,6 +165,18 @@
           video.play().catch(e => console.log('Autoplay prevented:', e));
         }
       }
+
+      // Make entire exhibit cards clickable
+      const exhibitCards = document.querySelectorAll('.exhibit-card');
+      exhibitCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function(e) {
+          const link = this.querySelector('.view-exhibit-link');
+          if (link && e.target !== link) {
+            window.location.href = link.href;
+          }
+        });
+      });
     });
   </script>
 </body>

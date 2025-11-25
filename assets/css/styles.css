@@ -287,17 +287,7 @@ p {
   font-size: 0.95rem;
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
-  /* Make clickable area cover the card */
-}
-
-.view-exhibit-link::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  position: relative;
 }
 
 .view-exhibit-link:hover {
@@ -392,7 +382,14 @@ p {
 }
 
 .featured-moment .media-block video {
-  border-radius: 4px;
+  border-radius: 8px;
+  /* Enhanced styling for featured video */
+  background: var(--soft-blush);
+  padding: 1rem;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(217, 200, 160, 0.15),
+    inset 0 0 0 1px rgba(217, 200, 160, 0.2);
 }
 
 .media-block video {
