@@ -14,14 +14,18 @@
 }
 
 :root {
-  /* Dolly Color Palette */
-  --cream: #FAF8F4;
-  --soft-blush: #F7D7E2;
-  --champagne-gold: #D9C8A0;
-  --light-rose: #F3C4CD;
-  --charcoal: #333333;
-  --pearl-white: #FDFCFA;
-  --silver-accent: #E8E8E8;
+  /* Dolly Color Palette - "Quiet Gallery" Theme */
+  --cream: #FAF5EF;          /* Background base */
+  --soft-blush: #FFF9F5;     /* Panel / card background */
+  --champagne-gold: #D9C8A0; /* Secondary accent */
+  --light-rose: #F3C4CD;     /* Primary accent (Dolly pink) */
+  --charcoal: #333333;       /* Text main */
+  --muted-text: #777777;     /* Muted text / labels */
+  --border-line: #E2D4C8;    /* Border / line */
+  
+  /* Semantic aliases for backward compatibility / clarity */
+  --pearl-white: var(--soft-blush); 
+  --silver-accent: var(--border-line); 
   
   /* Spacing */
   --container-max-width: 960px;
@@ -93,7 +97,7 @@ p {
   text-align: center;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--champagne-gold);
+  border-bottom: 1px solid var(--border-line);
   position: relative;
 }
 
@@ -272,7 +276,7 @@ p {
   font-size: 0.95rem;
   color: var(--charcoal);
   margin-bottom: 1.5rem;
-  opacity: 0.85;
+  opacity: 1; /* Removed opacity since we have specific colors now */
 }
 
 .view-exhibit-link {
@@ -311,7 +315,7 @@ p {
   text-align: center;
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--champagne-gold);
+  border-bottom: 1px solid var(--border-line);
 }
 
 .exhibit-title {
@@ -341,7 +345,7 @@ p {
   margin: 2.5rem auto 0 auto;
   max-width: 800px;
   padding-bottom: 3rem;
-  border-bottom: 1px solid var(--champagne-gold);
+  border-bottom: 1px solid var(--border-line);
 }
 
 .featured-title {
@@ -354,7 +358,7 @@ p {
   font-size: 0.98rem;
   text-align: center;
   color: var(--charcoal);
-  opacity: 0.85;
+  opacity: 1;
   max-width: 60ch;
   margin: 0 auto 1.75rem auto;
   font-family: Georgia, "Playfair Display", "Cormorant", serif;
@@ -404,7 +408,7 @@ p {
   line-height: 1.7;
   color: var(--charcoal);
   padding: 1.5rem;
-  background: var(--pearl-white);
+  background: var(--soft-blush);
   border-left: 3px solid var(--champagne-gold);
   border-radius: 1px;
 }
@@ -416,11 +420,11 @@ p {
 .site-footer {
   margin-top: 5rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--champagne-gold);
+  border-top: 1px solid var(--border-line);
   text-align: center;
   font-size: 0.875rem;
-  color: var(--charcoal);
-  opacity: 0.7;
+  color: var(--muted-text);
+  opacity: 1;
   position: relative;
   max-width: var(--container-max-width);
   margin-left: auto;
