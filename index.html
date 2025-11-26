@@ -34,6 +34,7 @@
         <video 
           src="assets/videos/hero.mp4" 
           autoplay 
+          loop
           muted 
           playsinline
           aria-label="Restored clip from the 1989 NASA Concert Special: Dolly Parton interacts with an audience member during a performance">
@@ -142,30 +143,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const video = document.querySelector('video');
-      if (video) {
-        // Check if user has seen the intro this session
-        if (!sessionStorage.getItem('hasSeenIntro')) {
-          // First visit this session - play intro once then loop
-          video.loop = false;
-          
-          video.addEventListener('ended', function() {
-            // Mark intro as seen
-            sessionStorage.setItem('hasSeenIntro', 'true');
-            // Continue to loop normally
-            video.loop = true;
-            video.play();
-          });
-          
-          // Ensure it plays
-          video.play().catch(e => console.log('Autoplay prevented:', e));
-        } else {
-          // Already seen intro - just loop normally
-          video.loop = true;
-          video.play().catch(e => console.log('Autoplay prevented:', e));
-        }
-      }
-
       // Make entire exhibit cards clickable
       const exhibitCards = document.querySelectorAll('.exhibit-card');
       exhibitCards.forEach(card => {
